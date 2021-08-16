@@ -41,6 +41,7 @@
   /* display: flex;
   justify-content: center;
   align-items: center; */
+  transition: all 0.4s ease-in;
 }
 
 /* Top & button Lines */
@@ -58,7 +59,21 @@
   align-items: center; */
   z-index: 1;
 }
-
+/* Moves Line Down */
 .menu-warp .hamburger > div::after {
   top: 10px;
+}
+/* Toggler Animation */
+.menu-warp .toggler:checked + .hamburger > div {
+  transform: rotate(138deg);
+}
+/* Turns Lines Into X */
+.menu-warp .toggler:checked + .hamburger > div::after,
+.menu-warp .toggler:checked + .hamburger > div::before {
+  top: 0;
+  transform: rotate(90deg);
+}
+/* Rotate On Hover When Checked */
+.menu-warp .toggler:checked:hover + .hamburger > div {
+  transform: rotate(225deg);
 }
